@@ -159,13 +159,6 @@ end)
 
 
 
-
-
-
-
-
-
-
 local CloseButton = Instance.new("TextButton")
 CloseButton.Size = UDim2.new(0, 150, 0, 20)
 CloseButton.Position = UDim2.new(1, -480, 0, 15)
@@ -179,17 +172,23 @@ CloseButton.Parent = Frame
 local CloseCorner = Instance.new("UICorner", CloseButton)
 CloseCorner.CornerRadius = UDim.new(0, 6)
 
+CloseButton.MouseButton1Click:Connect(function()
+
 local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://95156028272944"
 sound.PlaybackSpeed = 0.2 
 sound.Parent = game.workspace
 sound.Looped = true
 sound:Play()
-sound.Volume = 100
-
-
+sound.Volume = 1
 
 end)
+
+
+
+
+
+
 
 
 
