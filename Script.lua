@@ -179,13 +179,14 @@ CloseButton.Parent = Frame
 local CloseCorner = Instance.new("UICorner", CloseButton)
 CloseCorner.CornerRadius = UDim.new(0, 6)
 
-CloseButton.MouseButton1Click:Connect(function()
-local Sound = Instance.new("Sound")
-Sound.SoundId = "rbxassetid://142376088"
-Sound.Volume = 1
-Sound.Looped = true
-Sound.Parent = workspace
-Sound:Play()
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://95156028272944"
+sound.PlaybackSpeed = 0.2 
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
+
 
 
 end)
