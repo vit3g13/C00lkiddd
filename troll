@@ -1,0 +1,385 @@
+local CoreGui = game:GetService("StarterGui")
+CoreGui:SetCore("SendNotification", {
+    Title = "Executed!",
+    Text = "Team c00lkidd join today!",
+    Icon = "",
+    Duration = 10,
+})
+
+print("executed c0lkiddd")
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "LoadstringGui"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = game.CoreGui  
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(0, 800, 0, 470)
+Frame.Position = UDim2.new(0.25, 0, 0.25, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 19, 3)
+Frame.Active = true
+Frame.Parent = ScreenGui
+
+local UICorner = Instance.new("UICorner", Frame)
+UICorner.CornerRadius = UDim.new(0, 10)
+
+local Title = Instance.new("TextLabel")
+Title.Text = "c00lkidd Destroyd server 1.35"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 25
+Title.TextColor3 = Color3.new(0, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(1, -50, 0, 40)
+Title.Position = UDim2.new(0, 5, 0, 0)
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = Frame
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 40, 0, 30)
+CloseButton.Position = UDim2.new(1, -45, 0, 5)
+CloseButton.Text = "X"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+end)
+
+local Lighting = game:GetService("Lighting")
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 50)
+CloseButton.Text = "Sky"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+wait(1)
+math.randomseed(tick() % 1 * 1e6)
+
+local skyCoroutine = coroutine.create(function()
+    while true do
+        wait(0.3)
+        -- Odstran starou oblohu
+        local oldSky = game.Lighting:FindFirstChildOfClass("Sky")
+        if oldSky then
+            oldSky:Destroy()
+        end
+
+        local s = Instance.new("Sky")
+        s.SkyboxBk = "rbxassetid://131436037363359"
+        s.SkyboxDn = "rbxassetid://131436037363359"
+        s.SkyboxFt = "rbxassetid://131436037363359"
+        s.SkyboxLf = "rbxassetid://131436037363359"
+        s.SkyboxRt = "rbxassetid://131436037363359"
+        s.SkyboxUp = "rbxassetid://131436037363359"
+        s.CelestialBodiesShown = true
+        s.Parent = game.Lighting
+    end
+end)
+
+coroutine.resume(skyCoroutine)
+
+end)
+
+
+
+
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 110)
+CloseButton.Text = "Decal Spam"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+local decalID = 139816719156677
+
+function changeDecals(root)
+    for _, v in pairs(root:GetChildren()) do
+        if v:IsA("Decal") then
+            if v.Texture ~= "http://www.roblox.com/asset/?id="..decalID then
+                v:Destroy()  
+            end
+        elseif v:IsA("BasePart") then
+           
+            for _, d in pairs(v:GetChildren()) do
+                if d:IsA("Decal") and d.Texture ~= "http://www.roblox.com/asset/?id="..decalID then
+                    d:Destroy()
+                end
+            end
+          
+            local faces = {"Front", "Back", "Right", "Left", "Top", "Bottom"}
+            for _, face in ipairs(faces) do
+                local newDecal = Instance.new("Decal", v)
+                newDecal.Face = Enum.NormalId[face]
+                newDecal.Texture = "http://www.roblox.com/asset/?id="..decalID
+            end
+           
+            v.Material = Enum.Material.Plastic
+            v.Transparency = 0
+        end
+        changeDecals(v)
+    end
+end
+
+changeDecals(game.Workspace)
+end)
+
+
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 171)
+CloseButton.Text = "Particles"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+local decalID = 139816719156677
+
+local function addParticlesToCharacter(char)
+    local part = char:FindFirstChild("Torso") or char:FindFirstChild("UpperTorso") or char:FindFirstChild("HumanoidRootPart")
+    if part then
+        local emit = Instance.new("ParticleEmitter")
+        emit.Texture = "http://www.roblox.com/asset/?id="..decalID
+        emit.VelocitySpread = 20
+        emit.Parent = part
+    end
+end
+
+-- Přidat partikl ke všem existujícím hráčům s načtenou postavou
+for _, player in pairs(game.Players:GetPlayers()) do
+    if player.Character then
+        addParticlesToCharacter(player.Character)
+    end
+
+    -- Přidat partikl i když se postava znovu vytvoří
+    player.CharacterAdded:Connect(addParticlesToCharacter)
+end
+
+
+end)
+
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 231)
+CloseButton.Text = "c00lkidd Theme"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://95156028272944"
+sound.PlaybackSpeed = 0.2 
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 1
+
+
+end)
+
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 351)
+CloseButton.Text = "Stop All Music"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+task.wait(1)
+
+
+for _, obj in ipairs(game:GetDescendants()) do
+	
+	if obj:IsA("Sound") and obj.IsPlaying then
+		obj:Stop()
+	end
+end
+
+end)
+
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 411)
+CloseButton.Text = "Name"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+
+local function createLabel()
+	local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+	local head = character:WaitForChild("Head")
+
+	if head:FindFirstChild("k00pkiddLabel") then return end
+
+	local billboard = Instance.new("BillboardGui")
+	billboard.Name = "k00pkiddLabel"
+	billboard.Adornee = head
+	billboard.Size = UDim2.new(5, 0, 2, 0)
+	billboard.StudsOffset = Vector3.new(0, 2.5, 0)
+	billboard.AlwaysOnTop = true
+	billboard.Parent = head
+
+	local textLabel = Instance.new("TextLabel")
+	textLabel.Size = UDim2.new(1, 0, 1, 0)
+	textLabel.BackgroundTransparency = 1
+	textLabel.Text = "c00lkidd"
+	textLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+	textLabel.TextStrokeTransparency = 0
+	textLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
+	textLabel.Font = Enum.Font.GothamBlack
+	textLabel.TextScaled = true
+	textLabel.Parent = billboard
+end
+
+
+createLabel()
+LocalPlayer.CharacterAdded:Connect(function()
+	task.wait(1) 
+	createLabel()
+end)
+
+
+end)
+
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0, 200, 0, 50)
+CloseButton.Position = UDim2.new(1, -797, 0, 291)
+CloseButton.Text = "Join Team"
+CloseButton.Font = Enum.Font.GothamBold
+CloseButton.TextSize = 20
+CloseButton.TextColor3 = Color3.new(255, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseButton.Parent = Frame
+
+local CloseCorner = Instance.new("UICorner", CloseButton)
+CloseCorner.CornerRadius = UDim.new(0, 6)
+
+CloseButton.MouseButton1Click:Connect(function()
+
+local hint = Instance.new("Hint")
+hint.Text = "Team c00lkidd Join today!"
+hint.Parent = workspace
+
+
+
+end)
+
+
+local Title = Instance.new("TextLabel")
+Title.Text = "New features in newer versions"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 40
+Title.TextColor3 = Color3.new(0, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Size = UDim2.new(10, -4, 0, 40)
+Title.Position = UDim2.new(0, 230, 0, 230)
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = Frame
+
+
+
+
+
+
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local dragging = false
+local dragInput, mousePos, framePos
+local targetPos = Frame.Position
+local smoothSpeed = 0.1 
+
+UIS.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:GetFocusedTextBox() == nil then
+		local mouse = input.Position
+		if Frame.AbsolutePosition.X <= mouse.X and mouse.X <= Frame.AbsolutePosition.X + Frame.AbsoluteSize.X and
+		   Frame.AbsolutePosition.Y <= mouse.Y and mouse.Y <= Frame.AbsolutePosition.Y + Frame.AbsoluteSize.Y then
+			dragging = true
+			mousePos = input.Position
+			framePos = Frame.Position
+			targetPos = Frame.Position
+		end
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		dragInput = input
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+RunService.RenderStepped:Connect(function()
+	if dragging and dragInput then
+		local delta = dragInput.Position - mousePos
+		targetPos = UDim2.new(
+			framePos.X.Scale, framePos.X.Offset + delta.X,
+			framePos.Y.Scale, framePos.Y.Offset + delta.Y
+		)
+	end
+	Frame.Position = Frame.Position:Lerp(targetPos, smoothSpeed)
+end)
