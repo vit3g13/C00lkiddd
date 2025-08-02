@@ -20,7 +20,7 @@ Frame.Size = UDim2.new(0, 800, 0, 480)
 Frame.Position = UDim2.new(0.25, 0, 0.25, 0)
 Frame.BackgroundColor3 = Color3.fromRGB(255, 19, 3)
 Frame.Active = true
-Frame.Draggable = true
+Frame.Draggable = false
 Frame.Parent = ScreenGui
 
 local UICorner = Instance.new("UICorner", Frame)
@@ -412,4 +412,51 @@ LoadButton.MouseButton1Click:Connect(function()
     if not success then
         warn("Error (Reson script): " .. err)
     end
+end)
+
+
+
+
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local dragging = false
+local dragInput, mousePos, framePos
+local targetPos = Frame.Position -- ✅ oprava: bylo "frame.Position"
+local smoothSpeed = 0.1
+
+UIS.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:GetFocusedTextBox() == nil then
+		local mouse = input.Position
+		if Frame.AbsolutePosition.X <= mouse.X and mouse.X <= Frame.AbsolutePosition.X + Frame.AbsoluteSize.X and
+		   Frame.AbsolutePosition.Y <= mouse.Y and mouse.Y <= Frame.AbsolutePosition.Y + Frame.AbsoluteSize.Y then
+			dragging = true
+			mousePos = input.Position
+			framePos = Frame.Position
+			targetPos = Frame.Position
+		end
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		dragInput = input
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+RunService.RenderStepped:Connect(function()
+	if dragging and dragInput then
+		local delta = dragInput.Position - mousePos
+		targetPos = UDim2.new(
+			framePos.X.Scale, framePos.X.Offset + delta.X,
+			framePos.Y.Scale, framePos.Y.Offset + delta.Y
+		)
+	end
+	Frame.Position = Frame.Position:Lerp(targetPos, smoothSpeed)
 end)
