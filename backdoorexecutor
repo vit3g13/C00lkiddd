@@ -1,15 +1,16 @@
 local plr = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui", plr:WaitForChild("PlayerGui"))
-gui.Name = "c00lkidd Executor + Backdoor"
+gui.Name = ""
 gui.ResetOnSpawn = false
 
 local frame = Instance.new("Frame", gui)
+frame.Name = "Frame"
 frame.Size = UDim2.new(0, 360, 0, 240)
 frame.Position = UDim2.new(0.3, 0, 0.3, 0)
 frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 frame.BorderSizePixel = 0
 frame.Active = true
-frame.Draggable = true
+frame.Draggable = false
 
 local title = Instance.new("TextLabel", frame)
 title.Size = UDim2.new(1, 0, 0, 30)
@@ -238,4 +239,50 @@ scanner.MouseButton1Click:Connect(function()
 
 		
 	end
+end)
+
+
+
+local UIS = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local dragging = false
+local dragInput, mousePos, framePos
+local targetPos = frame.Position
+local smoothSpeed = 0.1
+
+UIS.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:GetFocusedTextBox() == nil then
+		local mouse = input.Position
+		if frame.AbsolutePosition.X <= mouse.X and mouse.X <= frame.AbsolutePosition.X + frame.AbsoluteSize.X and
+		   frame.AbsolutePosition.Y <= mouse.Y and mouse.Y <= frame.AbsolutePosition.Y + frame.AbsoluteSize.Y then
+			dragging = true
+			mousePos = input.Position
+			framePos = frame.Position
+			targetPos = frame.Position
+		end
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		dragInput = input
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+RunService.RenderStepped:Connect(function()
+	if dragging and dragInput then
+		local delta = dragInput.Position - mousePos
+		targetPos = UDim2.new(
+			framePos.X.Scale, framePos.X.Offset + delta.X,
+			framePos.Y.Scale, framePos.Y.Offset + delta.Y
+		)
+	end
+	frame.Position = frame.Position:Lerp(targetPos, smoothSpeed)
 end)
