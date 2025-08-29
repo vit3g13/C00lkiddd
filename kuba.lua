@@ -15,7 +15,7 @@ Frame.Parent = ScreenGui
 local UICorner = Instance.new("UICorner", Frame)
 UICorner.CornerRadius = UDim.new(0, 10)
 
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lukashub-coder/Lukas-magnet/refs/heads/main/Lukas%20magnet"))()
 
 
 local CloseButton = Instance.new("TextButton")
