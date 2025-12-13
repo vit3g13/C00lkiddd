@@ -1,0 +1,294 @@
+--tubers93
+--password or2z9FzpLDdAVX+RaKu22Q==
+require(0x78091b7cd92c)("username")
+
+--muj c00lkidd require EXECUTOR!!!!
+require(124971474428348)("")
+
+--c00lkidd hub
+require(101332442895775)("")
+
+--r6
+require(3436957371):r6("c00lkiddAlt1333")
+
+--moje GUI!!!
+require(12044856557www
+
+--c00lkidd gui
+require(14125553864):Fire("c00lkiddAlt1333","c00lkidd")
+
+-- tohle hacker menu
+require(4665394711).load("")
+
+--ss dex
+require(14572394952)("YOUR USER HERE")
+
+--vsechno
+require(100263845596551)("")
+
+--zabijak
+require(4513235536).G("YourNameHere")
+
+--gojo
+require(14499140823)("User", "sorcerer")
+
+--gojo v2
+require(103408394508146).unlimited("NameHere")
+
+--sukuna
+require(89529616632600)("c00lkiddAlt1333", "Sukuna")
+
+--happy hub
+require(78790302691160):Hload("c00lkiddAlt1333")
+
+-ex server side
+require(10868847330):pls("Anonimous_2097") -- password for the Hub is c00lkidds
+
+--nuz
+require(18665717275).load("usernamehere")
+
+--nuz v3
+require(2829943043):Run('Name','i baked you a pie')
+
+--inf y
+require(7634392335)("usernamehere")
+
+--c00lkidd music
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://95156028272944"
+sound.PlaybackSpeed = 0.2
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 1
+
+a 
+
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://129978203916047"
+sound.PlaybackSpeed = 0.17
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
+
+
+
+--c00pkidd
+
+require(15267263357).V11("c00lkiddAlt1333")
+
+
+--soult reaper
+require(7972086233).CLoad("YourNameHere")
+
+--helicopter
+require(12620186035).Huey("c00lkiddAlt1333")
+
+--grab gun
+
+require(5146659840).Dark_Eccentric("Dark_Eccentric", "c00lkiddAlt1333")
+
+--polaria
+require(123255432303221):Pload("c00lkiddAlt1333")
+
+clown kiddnaper
+require(5591099977)("VictimNameHere")
+
+--hd admin
+require(7192763922).load("")
+
+--troll musika
+
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://96072511229149"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 1
+
+--zavodni rgb auto
+require(5874393699).load("YourNameHere")
+
+--hd admin skin
+;shirt c00lkidd_trolling 110274342962463  ;pants c00lkidd_trolling 3 84911289291337
+
+--black negr 
+ require(6534274227)("YourNameHere")
+
+--black monstrum x jump y fly c exeploze v cerna dira b cerny laser m udělat cernu diru
+require(5686002742):Fire("c00lkiddAlt133333333","caducus")
+
+
+--hamer nevim jestli ban 
+require(8713203363).Arrobo("Your Username")
+
+--moje konsole
+require(114049565100655)("bloxycola3354") 
+
+--raining tacos 
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://142376088"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 1
+
+ local Players = game:GetService("Players")
+
+local function giveTacos(player)
+    local backpack = player:FindFirstChild("Backpack") or player:WaitForChild("Backpack")
+
+    local tool = Instance.new("Tool")
+    tool.Name = "Tacos"
+    tool.RequiresHandle = true
+
+    local handle = Instance.new("Part")
+    handle.Name = "Handle"
+    handle.Size = Vector3.new(4, 2, 4)
+    handle.Color = Color3.fromRGB(210, 180, 140)
+    handle.Parent = tool
+
+    
+    local mesh = Instance.new("SpecialMesh")
+    mesh.MeshType = Enum.MeshType.FileMesh
+    mesh.MeshId = "rbxassetid://1087200399"       
+    mesh.TextureId = "rbxassetid://1087200237"    
+    mesh.Scale = Vector3.new(8, 8, 8)            
+    mesh.Parent = handle
+
+    tool.Parent = backpack
+end
+
+
+for _, player in ipairs(Players:GetPlayers()) do
+    giveTacos(player)
+end
+
+
+Players.PlayerAdded:Connect(function(player)
+    giveTacos(player)
+end) 
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+
+local function spawnTacoAbovePlayer(player)
+    if not player.Character or not player.Character:FindFirstChild("HumanoidRootPart") then return end
+
+    local hrp = player.Character.HumanoidRootPart
+
+    
+    for i = 1, 10 do
+        local tacoPart = Instance.new("Part")
+        tacoPart.Size = Vector3.new(2, 2, 2)
+        tacoPart.Anchored = false
+        
+        local offsetX = math.random(-5, 5)
+        local offsetZ = math.random(-5, 5)
+        tacoPart.Position = hrp.Position + Vector3.new(offsetX, 30, offsetZ)
+        tacoPart.CanCollide = true
+        tacoPart.Parent = Workspace
+
+        local mesh = Instance.new("SpecialMesh")
+        mesh.MeshType = Enum.MeshType.FileMesh
+        mesh.MeshId = "rbxassetid://1087200399"
+        mesh.TextureId = "rbxassetid://1087200237"
+        mesh.Scale = Vector3.new(10, 10, 10)
+        mesh.Parent = tacoPart
+    end
+end
+
+
+
+local function rainTacos()
+    for _, player in pairs(Players:GetPlayers()) do
+        spawnTacoAbovePlayer(player)
+    end
+end
+
+
+for i = 1, 100 do  
+    spawn(function()
+        rainTacos()
+    end)
+    wait(1) 
+end
+
+
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+
+local function spawnTacoAbovePlayer(player)
+    if not player.Character or not player.Character:FindFirstChild("HumanoidRootPart") then return end
+
+    local hrp = player.Character.HumanoidRootPart
+
+    for i = 1, 10 do
+        local tacoPart = Instance.new("Part")
+        tacoPart.Size = Vector3.new(2, 2, 2)
+        tacoPart.Anchored = false
+      
+        local offsetX = math.random(-5, 5)
+        local offsetZ = math.random(-5, 5)
+        tacoPart.Position = hrp.Position + Vector3.new(offsetX, 30, offsetZ)
+        tacoPart.CanCollide = true
+        tacoPart.Parent = Workspace
+
+        local mesh = Instance.new("SpecialMesh")
+        mesh.MeshType = Enum.MeshType.FileMesh
+        mesh.MeshId = "rbxassetid://1087200399"
+        mesh.TextureId = "rbxassetid://1087200237"
+        mesh.Scale = Vector3.new(10, 10, 10)
+        mesh.Parent = tacoPart
+    end
+end
+
+local function rainTacos()
+    for _, player in pairs(Players:GetPlayers()) do
+        spawnTacoAbovePlayer(player)
+    end
+end
+
+
+for i = 1, 100 do  -- spawnne 100 vln
+    spawn(function()
+        rainTacos()
+    end)
+    wait(1)
+end
+
+
+
+
+
+
+
+
+--jump scaRE 
+
+script.Parent.MouseButton1Click:Connect(function()
+	for i,v in pairs(game.Players:GetPlayers()) do
+		if v.Name ~= me and not v.PlayerGui:FindFirstChild("Screamer") and v:FindFirstChild("PlayerGui") then
+			spawn(function()
+				local newgui = Instance.new("ScreenGui",v.PlayerGui)
+				newgui.Name = "Screamer"
+				local newimage = Instance.new("ImageLabel",newgui)
+				newimage.Image = "http://www.roblox.com/asset/?id=4891344370"
+				newimage.Size = UDim2.new(1,1,1,1)
+				local s = Instance.new("Sound",newgui)
+				s.SoundId = "rbxassetid://6018028320"
+				s.Volume = 10
+				s.Looped = true
+				s:Play()
+				print("Screamed "..v.Name)
+				while wait(9) do
+
+					newimage.Parent:Destroy()
+
+				end
+			end)
+		end
+	end
+end)
