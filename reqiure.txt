@@ -1,9 +1,47 @@
+--auto bryle cerny
+local InsertService = game:GetService("InsertService")
+local Players = game:GetService("Players")
+local player = Players:WaitForChild("c00lkiddAlt1333")
+local function GiveGlasses(char)
+    task.spawn(function()
+        while true do
+            task.wait(1)
+
+            
+            if char and char:FindFirstChild("Head") then
+                local asset = InsertService:LoadAsset(125571952738117)
+                local item = asset:GetChildren()[1]
+
+                if item then
+                    item.Parent = char
+                end
+            end
+        end
+    end)
+end
+
+player.CharacterAdded:Connect(function(char)
+    task.wait(1)
+    GiveGlasses(char)
+end)
+
+
+
+--bryle cerny
+game:GetService("InsertService"):LoadAsset(125571952738117):GetChildren()[1].Parent = game.Players["c00lkiddAlt1333"].Character
+
+--bryle bila
+game:GetService("InsertService"):LoadAsset(88281625975639):GetChildren()[1].Parent = game.Players["c00lkiddAlt1333"].Character
+
 --tubers93
 --password or2z9FzpLDdAVX+RaKu22Q==
 require(0x78091b7cd92c)("username")
 
 --muj c00lkidd require EXECUTOR!!!!
 require(124971474428348)("")
+
+--ex serverside working cracked
+require(0x308BC2E6B)['ExSer Cracked by LALOL Hub']("c00lkiddAlt1333")
 
 --c00lkidd hub
 require(101332442895775)("")
@@ -12,16 +50,16 @@ require(101332442895775)("")
 require(3436957371):r6("c00lkiddAlt1333")
 
 --moje GUI!!!
-require(12044856557www
+require(1204485655
 
 --c00lkidd gui
 require(14125553864):Fire("c00lkiddAlt1333","c00lkidd")
 
 -- tohle hacker menu
-require(4665394711).load("")
+require(4665394711).load("c00lkiddAlt1333")
 
 --ss dex
-require(14572394952)("YOUR USER HERE")
+require(14572394952)("c00lkiddAlt1333")
 
 --vsechno
 require(100263845596551)("")
@@ -42,7 +80,7 @@ require(89529616632600)("c00lkiddAlt1333", "Sukuna")
 require(78790302691160):Hload("c00lkiddAlt1333")
 
 -ex server side
-require(10868847330):pls("Anonimous_2097") -- password for the Hub is c00lkidds
+require(10868847330):pls("c00lkiddAlt1333") -- password for the Hub is c00lkidds
 
 --nuz
 require(18665717275).load("usernamehere")
@@ -102,12 +140,7 @@ require(7192763922).load("")
 
 --troll musika
 
-local sound = Instance.new("Sound")
-sound.SoundId = "rbxassetid://96072511229149"
-sound.Parent = game.workspace
-sound.Looped = true
-sound:Play()
-sound.Volume = 1
+	
 
 --zavodni rgb auto
 require(5874393699).load("YourNameHere")
