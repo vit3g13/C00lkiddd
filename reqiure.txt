@@ -80,8 +80,7 @@ require(89529616632600)("c00lkiddAlt1333", "Sukuna")
 require(78790302691160):Hload("c00lkiddAlt1333")
 
 -ex server side
-require(10868847330):pls("c00lkiddAlt1333") -- password for the Hub is c00lkidds
-
+require(0x308BC2E6B) [ 'ExSer Cracked by LALOL Hub']("c00lkiddAlt1333")
 --nuz
 require(18665717275).load("usernamehere")
 
@@ -112,7 +111,38 @@ sound.Looped = true
 sound:Play()
 sound.Volume = 100
 
+-- ...
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://117581626943372"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
 
+-- jason forsaken
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://81677828911918"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
+
+--admin hudba
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://134907499311321"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
+
+
+--picovina
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://83287682363564"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
 
 --c00pkidd
 
