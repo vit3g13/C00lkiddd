@@ -61,6 +61,9 @@ require(4665394711).load("c00lkiddAlt1333")
 --ss dex
 require(14572394952)("c00lkiddAlt1333")
 
+--1x1x1x1 gui 
+require(6858594080).KrnKidsSus("c00lkiddAlt1333")
+
 --vsechno
 require(100263845596551)("")
 
@@ -81,6 +84,7 @@ require(78790302691160):Hload("c00lkiddAlt1333")
 
 -ex server side
 require(0x308BC2E6B) [ 'ExSer Cracked by LALOL Hub']("c00lkiddAlt1333")
+
 --nuz
 require(18665717275).load("usernamehere")
 
@@ -139,6 +143,15 @@ sound.Volume = 100
 --picovina
 local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://83287682363564"
+sound.Parent = game.workspace
+sound.Looped = true
+sound:Play()
+sound.Volume = 100
+
+
+--jenom v moji hre
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://117909344476339"
 sound.Parent = game.workspace
 sound.Looped = true
 sound:Play()
